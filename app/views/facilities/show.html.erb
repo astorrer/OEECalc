@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @facility.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @facility.address %>
+</p>
+
+<p>
+  <strong>Secondary address:</strong>
+  <%= @facility.secondary_address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @facility.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @facility.country %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @facility.zip %>
+</p>
+
+<%= link_to 'Edit', edit_facility_path(@facility) %> |
+<%= link_to 'Back', facilities_path %>
