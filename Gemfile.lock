@@ -266,7 +266,6 @@ DEPENDENCIES
   sprockets (~> 4)
   sprockets-rails
   turbolinks (~> 5)
-  tzinfo-data
   web-console (>= 3.3.0)
   webdrivers
 
