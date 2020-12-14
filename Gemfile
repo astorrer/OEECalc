@@ -28,6 +28,9 @@ gem 'jbuilder', '~> 2.7'
 # Use devise for authentication
 gem 'devise'
 
+# Use HAML over ERB
+gem "haml-rails", "~> 2.0"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

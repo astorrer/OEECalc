@@ -1,0 +1,20 @@
+= form_with(model: equipment, local: true) do |form|
+  - if equipment.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(equipment.errors.count, "error")
+        prohibited this equipment from being saved:
+      %ul
+        - equipment.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :name
+    = form.text_field :name
+  .field
+    = form.label :number
+    = form.number_field :number
+  .field
+    = form.label :facility_id
+    = form.text_field :facility_id
+  .actions
+    = form.submit

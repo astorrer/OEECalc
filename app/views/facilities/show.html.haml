@@ -1,0 +1,22 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @facility.name
+%p
+  %strong Address:
+  = @facility.address
+%p
+  %strong Secondary address:
+  = @facility.secondary_address
+%p
+  %strong City:
+  = @facility.city
+%p
+  %strong Country:
+  = @facility.country
+%p
+  %strong Zip:
+  = @facility.zip
+= link_to 'Edit', edit_facility_path(@facility)
+|
+= link_to 'Back', facilities_path
