@@ -34,6 +34,12 @@ gem "haml-rails", "~> 2.0"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# Use Bootstrap to theme devise.
+gem 'devise-bootstrap-views', '~> 1.0'
+
+# Use Mailgun API to send mail.
+gem 'mailgun_rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
