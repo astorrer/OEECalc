@@ -39,6 +39,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Use Bootstrap to theme devise.
 gem 'devise-bootstrap-views', '~> 1.0'
 
+gem 'jquery-rails'
+
 # Use Mailgun API to send mail.
 gem 'mailgun_rails'
 

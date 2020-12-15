@@ -1,12 +1,45 @@
 !!!
 %html
   %body
-    %title RailsBootstrap4Integration
+    %title OEECalc | Access
     = csrf_meta_tags
     = csp_meta_tag
     %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload'
-    = javascript_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      %a.navbar-brand{:href => "#"} OEECalc
+      %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        %ul.navbar-nav.mr-auto
+          %li.nav-item.active
+            %a.nav-link{:href => "#"}
+              Home
+              %span.sr-only (current)
+          %li.nav-item
+            %a.nav-link{:href => "#"} About
+          %li.nav-item.dropdown
+            %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              Resources
+            .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+              = link_to 'Facilities', facilities_path, class: 'dropdown-item'
+              = link_to 'Equipment', equipment_index_path, class: 'dropdown-item'
+              .dropdown-divider
+              %a.dropdown-item{:href => "#"} Configuration
+          %li.nav-item
+            %a.nav-link{:href => "#"} Reports
+        %form.form-inline.my-2.my-lg-0
+          %button.btn.btn-success.my-2.my-sm-0{:type => "submit"} Log In
+
     .container
-      = yield
+      .row.justify-content-center
+        = link_to image_tag("oeecalc_logo.png")
+
+    .container
+      .row.justify-content-center
+        .col-md-8
+          = yield
+          
