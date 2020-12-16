@@ -7,23 +7,33 @@
       %ul
         - facility.errors.full_messages.each do |message|
           %li= message
-  .field
-    = form.label :name
-    = form.text_field :name
-  .field
-    = form.label :address
-    = form.text_field :address
-  .field
-    = form.label :secondary_address
-    = form.text_field :secondary_address
-  .field
-    = form.label :city
-    = form.text_field :city
-  .field
-    = form.label :country
-    = form.text_field :country
-  .field
-    = form.label :zip
-    = form.text_field :zip
-  .actions
-    = form.submit
+  
+  .card
+    .card-header
+      .btn-group
+        = form.button :submit, class: "btn btn-success" do
+          Save
+        = link_to 'Cancel', facilities_path, class: "btn btn-primary"
+    .card-body
+      .form
+        .form-group
+          = form.label :name
+          = form.text_field :name, class: "form-control"
+        .form-group
+          = form.label :address
+          = form.text_field :address, class: "form-control"
+        .form-group
+          = form.label :secondary_address
+          = form.text_field :secondary_address, class: "form-control"
+        .form-group
+          = form.label :city
+          = form.text_field :city, class: "form-control"
+        .form-group
+          = form.label :country
+          = form.text_field :country, class: "form-control"
+        .form-group
+          = form.label :zip
+          = form.text_field :zip, class: "form-control"
+    .card-footer
+      Facility Manager
+      
