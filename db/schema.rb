@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_14_021016) do
+ActiveRecord::Schema.define(version: 2020_12_28_042101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,22 @@ ActiveRecord::Schema.define(version: 2020_12_14_021016) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "metrics", force: :cascade do |t|
+    t.bigint "equipment_id", null: false
+    t.integer "planned_production_time"
+    t.integer "stop_time"
+    t.integer "ideal_cycle_time"
+    t.integer "total_count"
+    t.integer "good_count"
+    t.float "availability"
+    t.float "performance"
+    t.float "quality"
+    t.float "oee"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["equipment_id"], name: "index_metrics_on_equipment_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -48,4 +64,5 @@ ActiveRecord::Schema.define(version: 2020_12_14_021016) do
   end
 
   add_foreign_key "equipment", "facilities"
+  add_foreign_key "metrics", "equipment"
 end

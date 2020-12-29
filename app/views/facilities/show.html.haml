@@ -1,22 +1,54 @@
 %p#notice= notice
-%p
-  %strong Name:
-  = @facility.name
-%p
-  %strong Address:
-  = @facility.address
-%p
-  %strong Secondary address:
-  = @facility.secondary_address
-%p
-  %strong City:
-  = @facility.city
-%p
-  %strong Country:
-  = @facility.country
-%p
-  %strong Zip:
-  = @facility.zip
-= link_to 'Edit', edit_facility_path(@facility)
-|
-= link_to 'Back', facilities_path
+
+.jumbotron
+  %h1.display-4 
+    = @facility.name
+
+.card
+  .card-header
+    .btn-group
+      = link_to 'Edit', edit_facility_path(@facility), class: "btn btn-success"
+      = link_to 'Back', facilities_path, class: "btn btn-primary"
+  .card-body
+    %section#tabs.project-tab
+      .container
+        .row
+          .col-md-12
+            %nav
+              #nav-tab.nav.nav-pills.nav-fill{:role => "tablist"}
+                %a#nav-home-tab.nav-item.nav-link.active{"aria-controls" => "nav-home", "aria-selected" => "true", "data-toggle" => "tab", :href => "#nav-home", :role => "tab"} Facility Information
+                %a#nav-profile-tab.nav-item.nav-link{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-profile", :role => "tab"} Equipment
+                %a#nav-contact-tab.nav-item.nav-link{"aria-controls" => "nav-contact", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-contact", :role => "tab"} OEE Results
+            #nav-tabContent.tab-content
+              #nav-home.tab-pane.fade.show.active{"aria-labelledby" => "nav-home-tab", :role => "tabpanel"}
+                %p
+                  %strong Address:
+                  = @facility.address
+                %p
+                  %strong Secondary address:
+                  = @facility.secondary_address
+                %p
+                  %strong City:
+                  = @facility.city
+                %p
+                  %strong Country:
+                  = @facility.country
+                %p
+                  %strong Zip:
+                  = @facility.zip
+                  
+              #nav-profile.tab-pane.fade{"aria-labelledby" => "nav-profile-tab", :role => "tabpanel"}
+                %table.table
+                  %thead
+                    %tr
+                      %th Name
+                      %th Number
+                      %th{:colspan => "1"}
+                  %tbody
+                    - @equipment.each do |equipment|
+                      %tr
+                        %td= equipment.name
+                        %td= equipment.number
+                        %td= link_to 'View', equipment, class: "btn btn-primary"
+              #nav-contact.tab-pane.fade{"aria-labelledby" => "nav-contact-tab", :role => "tabpanel"}
+                %h3 Next Task

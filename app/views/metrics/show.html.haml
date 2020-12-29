@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Equipment:
+  = @metric.equipment
+%p
+  %b Planned production time:
+  = @metric.planned_production_time
+%p
+  %b Stop time:
+  = @metric.stop_time
+%p
+  %b Ideal cycle time:
+  = @metric.ideal_cycle_time
+%p
+  %b Total count:
+  = @metric.total_count
+%p
+  %b Good count:
+  = @metric.good_count
+%p
+  %b Availability:
+  = @metric.availability
+%p
+  %b Performance:
+  = @metric.performance
+%p
+  %b Quality:
+  = @metric.quality
+%p
+  %b Oee:
+  = @metric.oee
+
+= link_to 'Edit', edit_metric_path(@metric)
+\|
+= link_to 'Back', metrics_path

@@ -11,6 +11,7 @@ class FacilitiesController < ApplicationController
   # GET /facilities/1
   # GET /facilities/1.json
   def show
+    @equipment = Equipment.all
   end
 
   # GET /facilities/new

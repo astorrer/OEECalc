@@ -1,0 +1,39 @@
+%h1 Listing metrics
+
+%table
+  %thead
+    %tr
+      %th Equipment
+      %th Planned production time
+      %th Stop time
+      %th Ideal cycle time
+      %th Total count
+      %th Good count
+      %th Availability
+      %th Performance
+      %th Quality
+      %th Oee
+      %th
+      %th
+      %th
+
+  %tbody
+    - @metrics.each do |metric|
+      %tr
+        %td= metric.equipment
+        %td= metric.planned_production_time
+        %td= metric.stop_time
+        %td= metric.ideal_cycle_time
+        %td= metric.total_count
+        %td= metric.good_count
+        %td= metric.availability
+        %td= metric.performance
+        %td= metric.quality
+        %td= metric.oee
+        %td= link_to 'Show', metric
+        %td= link_to 'Edit', edit_metric_path(metric)
+        %td= link_to 'Destroy', metric, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Metric', new_metric_path

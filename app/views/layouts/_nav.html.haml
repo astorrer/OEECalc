@@ -15,8 +15,13 @@
           .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
             = link_to 'Facilities', facilities_path, class: 'dropdown-item'
             = link_to 'Equipment', equipment_index_path, class: 'dropdown-item'
+        %li.nav-item.dropdown
+          %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Metrics
+          .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+            = link_to 'Show Metrics', metrics_path, class: 'dropdown-item'
             .dropdown-divider
-            %a.dropdown-item{:href => "#"} Configuration
+            = link_to 'Record Metric', new_metric_path, class: 'dropdown-item'
         %li.nav-item
           %a.nav-link{:href => "#"} Reports
     - if user_signed_in?

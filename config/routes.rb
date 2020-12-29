@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :metrics
   resources :equipment
   resources :facilities
   devise_for :users
