@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   root :to => 'static_pages#home'
 
-  match "/about" => "static_pages#about", via: :get
+  # Routes for static_pages. 
+  match "/home"  =>    "static_pages#home",      via: :get
+  match "/about" =>    "static_pages#about",     via: :get
+  
 
 end
