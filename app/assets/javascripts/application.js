@@ -1,4 +1,4 @@
-//= require jquery3
-//= require bootstrap
+//= require jquery
+//= require jquery_ujs
 //= require sidebar
 //= require_tree .

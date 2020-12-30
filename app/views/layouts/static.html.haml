@@ -10,9 +10,7 @@
     = javascript_include_tag 'application'
     %script{src: "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js", integrity: "sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf", crossorigin: "anonymous"}
     
-    .container
-      .row.justify-content-center
-        = link_to image_tag("oeecalc_logo.png")
+    = render partial: 'layouts/nav_static'
 
     .container
       .row.justify-content-center
