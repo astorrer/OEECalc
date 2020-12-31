@@ -5,7 +5,7 @@ class FacilitiesController < ApplicationController
   # GET /facilities
   # GET /facilities.json
   def index
-    @facilities = Facility.all
+    @facilities = Facility.search(params[:search])
   end
 
   # GET /facilities/1
@@ -71,6 +71,6 @@ class FacilitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def facility_params
-      params.require(:facility).permit(:name, :address, :secondary_address, :city, :country, :zip)
+      params.require(:facility).permit(:name, :address, :secondary_address, :city, :country, :zip, :search)
     end
 end
