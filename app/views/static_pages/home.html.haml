@@ -1,1 +1,11 @@
-%h1 Home
+%p#notice= notice
+
+.jumbotron
+  %h1.display-4 Home
+
+.card
+  .card-body
+    %h5.card-title Program Organization
+    %p.card-text This program allows users to create metrics recordings. Each recording has four inputs. To track these recordings, each recording is assigned to a piece of equipment, which is then assigned to a facility.
+  = image_tag('application_organization_chart.png', :class => 'card-img-bottom', :style => 'padding: 20px;')
+  
