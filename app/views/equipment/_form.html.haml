@@ -7,14 +7,20 @@
       %ul
         - equipment.errors.full_messages.each do |message|
           %li= message
-  .field
-    = form.label :name
-    = form.text_field :name
-  .field
-    = form.label :number
-    = form.number_field :number
-  .field
-    = form.label :facility_id
-    = form.text_field :facility_id
-  .actions
-    = form.submit
+  
+  .card
+    .card-header
+      .btn-group
+        = form.button :submit, class: "btn btn-success" do
+          Save
+        = link_to 'Cancel', equipment_index_path, class: "btn btn-primary"
+    .card-body
+      .form-group
+        = form.label :facility_id
+        = form.collection_select :facility_id, Facility.all, :id, :name, {prompt: "Select Facility"}, {class: "form-control"}
+      .form-group
+        = form.label :name
+        = form.text_field :name, class: 'form-control'
+      .form-group
+        = form.label :number
+        = form.number_field :number, class: 'form-control'

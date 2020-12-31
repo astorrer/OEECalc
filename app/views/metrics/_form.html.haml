@@ -12,37 +12,37 @@
         = f.button :submit, class: "btn btn-success" do
           Save
         = link_to 'Cancel', metrics_path, class: "btn btn-primary"
-      .card-body
-        .form
-          .form-group
-            = f.label :equipment
-            = f.collection_select :equipment_id, Equipment.all, :id, :name, {prompt: "Select Equipment"}, {class: "form-control"}
-          .form-group
-            = f.label :planned_production_time
-            = f.number_field :planned_production_time, class: "form-control"
-          .form-group
-            = f.label :stop_time
-            = f.number_field :stop_time, class: "form-control"
-          .form-group
-            = f.label :ideal_cycle_time
-            = f.number_field :ideal_cycle_time, class: "form-control"
-          .form-group
-            = f.label :total_count
-            = f.number_field :total_count, class: "form-control"
-          .form-group
-            = f.label :good_count
-            = f.number_field :good_count, class: "form-control"
-          .form-group
-            = f.label :availability
-            = f.text_field :availability, class: "form-control", readonly: true, placeholder: "Calculated on Save"
-          .form-group
-            = f.label :performance
-            = f.text_field :performance, class: "form-control", readonly: true, placeholder: "Calculated on Save"
-          .form-group
-            = f.label :quality
-            = f.text_field :quality, class: "form-control", readonly: true, placeholder: "Calculated on Save"
-          .form-group
-            = f.label :oee
-            = f.text_field :oee, class: "form-control", readonly: true, placeholder: "Calculated on Save"
+    .card-body
+      .form
+        .form-group
+          = f.label :equipment
+          = f.collection_select :equipment_id, Equipment.all, :id, :name, {prompt: "Select Equipment"}, {class: "form-control"}
+        .form-group
+          = f.label :planned_production_time
+          = f.number_field :planned_production_time, class: "form-control"
+        .form-group
+          = f.label :stop_time
+          = f.number_field :stop_time, class: "form-control"
+        .form-group
+          = f.label :ideal_cycle_time
+          = f.number_field :ideal_cycle_time, class: "form-control"
+        .form-group
+          = f.label :total_count
+          = f.number_field :total_count, class: "form-control"
+        .form-group
+          = f.label :good_count
+          = f.number_field :good_count, class: "form-control"
+        .form-group
+          = f.label :availability
+          = f.text_field :availability, class: "form-control", readonly: true, placeholder: "Calculated on Save"
+        .form-group
+          = f.label :performance
+          = f.text_field :performance, class: "form-control", readonly: true, placeholder: "Calculated on Save"
+        .form-group
+          = f.label :quality
+          = f.text_field :quality, class: "form-control", readonly: true, placeholder: "Calculated on Save"
+        .form-group
+          = f.label :oee
+          = f.text_field :oee, class: "form-control", readonly: true, placeholder: "Calculated on Save"
     .card-footer
       Metric Entry

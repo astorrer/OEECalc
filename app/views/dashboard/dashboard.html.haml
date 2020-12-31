@@ -1,2 +1,28 @@
-%h1 Dashboard
+%p#notice= notice
 
+.jumbotron
+  %h1.display-4 Dashboard
+  
+.container
+  .row
+    .col-md-6.mb-3
+      .card
+        .card-header
+          Overall Results
+        .card-body
+          Null%
+    .col-md-6.mb-3
+      .card
+        .card-header
+          Program Status
+        .card-body
+          Facilities Total:
+          Total Recordings:
+  .row
+    .col-lg-12
+      .card
+        .card-header
+          Reports
+        .card-body
+          .btn.btn-primary.disabled
+            Export All Data
