@@ -3,9 +3,32 @@
 .jumbotron
   %h1.display-4 Home
 
-.card
+.card.mb-3
+  .card-header
+    Program Summary
   .card-body
-    %h5.card-title Program Organization
-    %p.card-text To track these recordings, each recording is assigned to a piece of equipment, which is then assigned to a facility.
+    %p.card-text
+      The purpose of this program is to ease the use of tracking Overall Equipment Efficiency. OEE is an industry standard key performance indicator. (KPI). OEE is calculated from the three following indicators: 
+      %ol
+        %li Availability
+        %li Performance
+        %li Quality
+      To accomplish this task, this program allows users to create metrics recordings. Each recording has five inputs. These inputs are used to obtain the availability, performance, and quality indicators. These inputs are:
+      %ol
+        %li Planned Production Time
+        %li Stop Time
+        %li Ideal Cycle Time
+        %li Total Count
+        %li Good Count
+      To track these recordings, each recording is assigned to a piece of equipment, which is then assigned to a facility. Multiple recordings can be aggregated to formulate the final calculation. 
+      This data can be exported as a csv report for import into Excel or Tableau. The data can also be accessed via an OBDC database driver. 
+      
+
+.card.mb-3
+  .card-header
+    Program Organization
+  .card-body
+    %p.card-text
+      The program's organizational structure can be viewed from a user perspective in the following structure:
   = image_tag('application_organization_chart.png', :class => 'card-img-bottom', :style => 'padding: 20px;')
   
