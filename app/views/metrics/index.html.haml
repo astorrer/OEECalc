@@ -5,7 +5,10 @@
 
 .card
   .card-header
-    = link_to 'New Metric', new_metric_path, class: "btn btn-success"
+    = link_to new_metric_path do
+      .btn.btn-success
+        = fa_icon "plus-square"
+        New Recording
   .card-body
     %table.table
       %thead

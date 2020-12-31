@@ -2,23 +2,36 @@
   #sidebar-wrapper.bg-light.border-right
     .sidebar-heading OEECalc
     .list-group.list-group-flush
-      %a.list-group-item.list-group-item-action.bg-light{:href => "#"} Dashboard
-      = link_to 'Facilities', facilities_path, class: 'list-group-item list-group-item-action bg-light'
-      = link_to 'Equipment', equipment_index_path, class: 'list-group-item list-group-item-action bg-light'
-      = link_to 'Metrics', metrics_path, class: 'list-group-item list-group-item-action bg-light'
+      = link_to root_path, class: 'list-group-item list-group-item-action bg-light' do
+        = fa_icon 'tachometer'
+        Dashboard
+      = link_to facilities_path, class: 'list-group-item list-group-item-action bg-light' do
+        = fa_icon 'industry'
+        Facilities
+      = link_to equipment_index_path, class: 'list-group-item list-group-item-action bg-light' do
+        = fa_icon 'cogs'
+        Equipment
+      = link_to metrics_path, class: 'list-group-item list-group-item-action bg-light' do
+        = fa_icon 'pencil'
+        Metrics
   
   #page-content-wrapper
     %nav.navbar.navbar-expand-lg.navbar-light.bg-light.border-bottom
-      %button#menu-toggle.btn.btn-primary Toggle Menu
+      %button#menu-toggle.btn.btn-primary
+        = fa_icon 'caret-left'
+        Menu
       %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
-        %span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         %ul.navbar-nav.ml-auto.mt-2.mt-lg-0
           %li.nav-item.active
-            = link_to 'Home', home_path, class: 'nav-link'
+            = link_to home_path, class: 'nav-link' do
+              = fa_icon 'home'
+              Home
             %span.sr-only (current)
           %li.nav-item
-            = link_to 'About', about_path, class: 'nav-link'
+            = link_to about_path, class: 'nav-link' do
+              = fa_icon 'info-circle'
+              About
           %li.nav-item.dropdown
             %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
               = current_user.email

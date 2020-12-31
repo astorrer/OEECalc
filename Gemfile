@@ -35,6 +35,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Use Bootstrap to theme devise.
 gem 'devise-bootstrap-views', '~> 1.0'
 
+# Include Font-Awesome for icons.
+gem "font-awesome-rails"
+
 gem 'jquery-rails'
 
 # Use Mailgun API to send mail.
