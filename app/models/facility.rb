@@ -16,4 +16,6 @@ class Facility < ApplicationRecord
       @facilities = Facility.all
     end
   end
+  
+  validates :name, presence: true
 end

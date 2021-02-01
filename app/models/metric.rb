@@ -11,4 +11,6 @@ class Metric < ApplicationRecord
     end
   end
 
+  validates :planned_production_time, :stop_time, :ideal_cycle_time, :total_count, :good_count, presence: true
+  
 end
