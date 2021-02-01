@@ -12,6 +12,11 @@ class FacilitiesController < ApplicationController
   # GET /facilities/1.json
   def show
     @equipment = Equipment.all
+    
+    @facility = Facility.find(params[:id])
+    @expectation = Expectation.new
+    
+    @last_expected = @facility.expectations.last
   end
 
   # GET /facilities/new
