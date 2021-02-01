@@ -3,8 +3,9 @@
     = @facility.name
   %p
     Most Recent Expectation:
-    = @last_expected.description
-    = @last_expected.overall_value
+    - unless @last_expected == false
+      = @last_expected.description
+      = @last_expected.overall_value
   
 
 .card.mb-4

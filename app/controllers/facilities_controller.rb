@@ -16,7 +16,11 @@ class FacilitiesController < ApplicationController
     @facility = Facility.find(params[:id])
     @expectation = Expectation.new
     
-    @last_expected = @facility.expectations.last
+    if @last_expected = @facility.expectations.last
+      @last_expected = @facility.expectations.last
+    else
+      @last_expected = false
+    end
   end
 
   # GET /facilities/new

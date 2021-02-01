@@ -14,7 +14,11 @@ class EquipmentController < ApplicationController
     @equipment = Equipment.find(params[:id])
     @expectation = Expectation.new
     
-    @last_expected = @equipment.expectations.last
+    if @last_expected = @equipment.expectations.last
+      @last_expected = @equipment.expectations.last
+    else
+      @last_expected = false
+    end
   end
 
   # GET /equipment/new
