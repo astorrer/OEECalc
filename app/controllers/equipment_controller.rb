@@ -1,4 +1,5 @@
 class EquipmentController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_equipment, only: [:show, :edit, :update, :destroy]
 
   # GET /equipment
@@ -10,6 +11,10 @@ class EquipmentController < ApplicationController
   # GET /equipment/1
   # GET /equipment/1.json
   def show
+    @equipment = Equipment.find(params[:id])
+    @expectation = Expectation.new
+    
+    @last_expected = @equipment.expectations.last
   end
 
   # GET /equipment/new

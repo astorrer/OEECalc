@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :metrics
   resources :equipment
   resources :facilities
+  resources :expectations
   devise_for :users
 
   authenticated do

@@ -1,7 +1,7 @@
 class Facility < ApplicationRecord
 
   # Polymorphic Association (Can also belong to equipment.)
-  has_many :expectations, as: :expectationable
+  has_many :expectations, as: :expectable
 
   # Search using SQL Like. (A very simple search implementation.)
   def self.search(search)
