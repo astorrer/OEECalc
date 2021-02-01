@@ -1,6 +1,9 @@
 class Facility < ApplicationRecord
 
+  # Polymorphic Association (Can also belong to equipment.)
+  has_many :expectations, as: :expectationable
 
+  # Search using SQL Like. (A very simple search implementation.)
   def self.search(search)
     if search
       search_object = Facility.where("name ILIKE ?", "%#{search}%") # Let SQL perform the search with speed.
