@@ -29,6 +29,9 @@ gem 'devise'
 # Use HAML over ERB
 gem "haml-rails", "~> 2.0"
 
+# Use CSV Gem
+gem 'to_csv-rails'# Last officially released gem
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

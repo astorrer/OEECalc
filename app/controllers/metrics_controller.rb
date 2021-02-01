@@ -6,6 +6,13 @@ class MetricsController < ApplicationController
   # GET /metrics.json
   def index
     @metrics = Metric.all
+    
+    respond_to do |format|
+      format.html
+      format.csv {
+        send_data @metrics.to_csv, filename: "metrics_#{Time.now.strftime('%Y%m%dT%H%M%SZ')}.csv" # Uses well known Regex to make sure time is formated. (Windows won't like dashes included by default.)
+      }
+    end
   end
 
   # GET /metrics/1

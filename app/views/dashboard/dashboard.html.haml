@@ -21,7 +21,6 @@
     .col-lg-12
       .card
         .card-header
-          Reports
+          Export All (Metrics) Data
         .card-body
-          .btn.btn-primary.disabled
-            Export All Data
+          = link_to 'Export All Data', metrics_path(:format => :csv), class: 'btn btn-primary'
